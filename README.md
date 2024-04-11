@@ -65,8 +65,12 @@ docker build -f Dockerfile -t vegindex .
 To spin up a docker image using:
 
 ```
-docker run -it -v /local_data:/data/archive vegindex
+docker run -it -v ./data/archive:/data/archive vegindex
 ```
 
 This will give you a terminal with access to a working python environment. Although the processing is isolated (sandboxed) the virtual machine will have full access to the linked directory. Note that any destructive actions, e.g. (re)moving files, will be reflected outside the virtual machine. In short, although there is some protection against mallware, the setup does not prevent the corruption of your image archive.
+
+## Use
+
+
 
