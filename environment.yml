@@ -1,0 +1,19 @@
+name: vegindex
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python
+  - conda
+  - pip
+  - numpy
+  - pillow
+  - pandas
+  - pyephem
+  - matplotlib
+
+pip:
+  - vegindex
+
