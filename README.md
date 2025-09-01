@@ -79,20 +79,12 @@ You can either call this script on the command line, manually, or rely on a time
 For example, if you want to run the script at 8:00h in the morning you can specify a cron job as such (when using the conda environment):
 
 ```
-0 8 * * * /location/of/script/process_vegindex.sh
+0 8 * * * sh /location/of/script/process_vegindex.sh
 ```
 
 When using the docker image (the preferred method) you can use:
 
 ```
-0 8 * * * docker run --rm vegindex -v ./data/archive:/data/archive /process_vegindex.sh
+0 8 * * * docker run --rm vegindex -v ./data/archive:/data/archive ./process_vegindex.sh
 ```
-```
-
-
-
-
-
-
-
 
