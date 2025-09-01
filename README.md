@@ -68,9 +68,31 @@ To spin up a docker image using:
 docker run -it -v ./data/archive:/data/archive vegindex
 ```
 
-This will give you a terminal with access to a working python environment. Although the processing is isolated (sandboxed) the virtual machine will have full access to the linked directory. Note that any destructive actions, e.g. (re)moving files, will be reflected outside the virtual machine. In short, although there is some protection against mallware, the setup does not prevent the corruption of your image archive.
+This will give you a terminal with access to a working python environment. Although the processing is isolated (sandboxed) the virtual machine will have full access to the linked directory. Note that any destructive actions, e.g. (re)moving files, will be reflected outside the virtual machine. In short, although there is some protection against mallware, the setup does not prevent the corruption of your image archive. Before processing a whole archive it is best to test the integrity of the workflow on the included demo data.
 
 ## Use
+
+For one-of processing you can use the linux environment as per instruction on the `vegindex` documentation site. However, when data arrives continuously it is best to setup processing at set intervals. The included script `process_vegindex.sh` steps through all required processing scripts of the `vegindex` package to update the whole archive. Note, this script does not include the management of the files. The management of incoming data into appropriate directories should be handled separately from the processing routine.
+
+You can either call this script on the command line, manually, or rely on a timed cron job to process the data at set intervals. The latter is preferred for ease of use and consistency.
+
+For example, if you want to run the script at 8:00h in the morning you can specify a cron job as such (when using the conda environment):
+
+```
+0 8 * * * /location/of/script/process_vegindex.sh
+```
+
+When using the docker image (the preferred method) you can use:
+
+```
+0 8 * * * docker run --rm vegindex -v ./data/archive:/data/archive /process_vegindex.sh
+```
+```
+
+
+
+
+
 
 
 
