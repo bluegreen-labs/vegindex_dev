@@ -88,5 +88,5 @@ When using the docker image (the preferred method) you can use:
 0 8 * * * docker run -v ./data/archive:/data/archive --rm vegindex ./process_vegindex.sh
 ```
 
-Note that this not isolate your environment or cron job control to the docker.
+Note that this does not isolate your environment or cron job control into the docker itself.
 
