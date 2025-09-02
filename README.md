@@ -85,6 +85,8 @@ For example, if you want to run the script at 8:00h in the morning you can speci
 When using the docker image (the preferred method) you can use:
 
 ```
-0 8 * * * docker run --rm vegindex -v ./data/archive:/data/archive ./process_vegindex.sh
+0 8 * * * docker run -v ./data/archive:/data/archive --rm vegindex ./process_vegindex.sh
 ```
+
+Note that this not isolate your environment or cron job control to the docker.
 

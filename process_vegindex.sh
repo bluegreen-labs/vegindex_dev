@@ -1,7 +1,28 @@
 #!/bin/bash
 
-# set path directory
-archive_path=$1
+# activate environment if not running from
+# bash shell CLI / docker direct call to script
+if [[ "${CONDA_DEFAULT_ENV}" != "vegindex" ]]; then
+  source activate vegindex
+fi
+
+# if the default directory does not exist
+# assume it is set by the global variable
+if [ ! -d "/data/archive" ]; then
+  archive_path=${PHENOCAM_ARCHIVE_DIR}
+else
+  archive_path="/data/archive"
+fi
+
+# double check if the global variable
+# based path exists as well
+if [ ! -d "${archive_path}" ]; then
+  echo "image archive path does not exist!"
+  echo " -- check if /data/archive is mounted"
+  echo " -- or the environment variable"
+  echo " -- PHENOCAM_ARCHIVE_DIR is set"
+  exit 1
+fi
 
 # list all sites (full directories)
 site_paths=`ls -d ${archive_path}/*/`

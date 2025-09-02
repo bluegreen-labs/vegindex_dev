@@ -7,7 +7,9 @@ FROM continuumio/miniconda3
 COPY environment.yml .
 
 # copy processing script
+# and make executable
 COPY process_vegindex.sh .
+RUN chmod +x *.sh
 
 # install libraries for common
 # image format decoding etc
