@@ -92,5 +92,5 @@ Note that this does not isolate your environment or cron job control into the do
 
 ## Acknowledgements
 
-This repository is a product of BlueGreen Labs, and has been in part supported through the Open and FAIR integrated phenology monitoring system [OSCAR's grant](https://oscars-project.eu/projects/open-and-fair-integrated-phenology-monitoring-system).
+This repository is a product of BlueGreen Labs, and has been in part supported through the Open and FAIR integrated phenology monitoring system [OSCARS grant](https://oscars-project.eu/projects/open-and-fair-integrated-phenology-monitoring-system).
 
