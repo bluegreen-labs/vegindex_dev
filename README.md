@@ -90,3 +90,7 @@ When using the docker image (the preferred method) you can use:
 
 Note that this does not isolate your environment or cron job control into the docker itself.
 
+## Acknowledgements
+
+This repository is a product of BlueGreen Labs, and has been in part supported through the Open and FAIR integrated phenology monitoring system [OSCAR's grant](https://oscars-project.eu/projects/open-and-fair-integrated-phenology-monitoring-system).
+
